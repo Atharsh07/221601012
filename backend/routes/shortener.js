@@ -35,6 +35,18 @@ router.post('/shorten', (req, res, next) => {
   }
 });
 
+
+router.get('/stats', (req, res) => {
+  const stats = Array.from(store.values()).map((item) => ({
+    originalUrl: item.originalUrl,
+    shortUrl: item.shortUrl,
+    createdAt: new Date(item.createdAt).toISOString(),
+    expiresAt: new Date(item.expiresAt).toISOString(),
+    clicks: item.clickCount,
+  }));
+  res.json(stats);
+});
+
 router.get('/:code', (req, res, next) => {
   try {
     const code = req.params.code;
@@ -53,15 +65,5 @@ router.get('/:code', (req, res, next) => {
   }
 });
 
-router.get('/stats', (req, res) => {
-  const stats = Array.from(store.values()).map((item) => ({
-    originalUrl: item.originalUrl,
-    shortUrl: item.shortUrl,
-    createdAt: new Date(item.createdAt).toISOString(),
-    expiresAt: new Date(item.expiresAt).toISOString(),
-    clicks: item.clickCount,
-  }));
-  res.json(stats);
-});
 
 module.exports = router;
