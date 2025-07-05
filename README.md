@@ -37,7 +37,7 @@ A full-stack URL Shortener application built with **Express (Node.js)** for the 
 ## 🚀 Getting Started
 
 ### 🔧 Backend Setup
-
+![alt text](<outputScreenshots/backend-api-postman-req-res/Screenshot 2025-07-05 111834.png>)
 ```bash
 cd backend
 npm install
