@@ -19,7 +19,7 @@ const StatsPage = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const res = await axios.get('/stats');
+        const res = await axios.get('/api/stats');
         setStats(res.data);
       } catch (err) {
         console.error('Error fetching statistics:', err);

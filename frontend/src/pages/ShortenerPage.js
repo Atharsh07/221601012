@@ -53,7 +53,7 @@ const ShortenerPage = () => {
       .filter((row) => row.url !== '')
       .map((row) =>
         axios
-          .post('/shorten', {
+          .post('api/shorten', {
             url: row.url,
             shortcode: row.shortcode || undefined,
             validity: row.validity ? parseInt(row.validity) : undefined,
