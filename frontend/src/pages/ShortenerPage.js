@@ -6,8 +6,8 @@ import axios from 'axios';
 
 const ShortenerPage = () => {
   const [inputs, setInputs] = useState(
-    Array(5).fill({ url: '', shortcode: '', validity: '' })
-  );
+  Array.from({ length: 5 }, () => ({ url: '', shortcode: '', validity: '' }))
+);
   const [results, setResults] = useState([]);
   const [errors, setErrors] = useState([]);
 

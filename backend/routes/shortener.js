@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const generateCode = require('../utils/codeGenerator');
 const store = require('../store');
-
 const HOST = 'http://localhost:3000';
 
 

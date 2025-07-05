@@ -9,15 +9,20 @@ const App = () => {
 
   return (
     <Router>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            URL Shortener
-          </Typography>
-          <Button color="inherit" component={Link} to="/">Shorten</Button>
-          <Button color="inherit" component={Link} to="/stats">Statistics</Button>
-        </Toolbar>
-      </AppBar>
+      <AppBar position="static" color="primary">
+  <Toolbar>
+    <Typography variant="h6" sx={{ flexGrow: 1 }}>
+      URL Shortener
+    </Typography>
+    <Button color="inherit" component={Link} to="/">
+      Shorten
+    </Button>
+    <Button color="inherit" component={Link} to="/stats">
+      Statistics
+    </Button>
+  </Toolbar>
+</AppBar>
+
       <Container maxWidth="lg">
         <Routes>
           <Route path="/" element={<ShortenerPage />} />

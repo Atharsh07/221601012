@@ -6,11 +6,12 @@
     const port = 3001;
     app.use(express.json());
     app.use(logger);
-
+    const cors = require('cors');
+    app.use(cors());
     app.use('/', shortenerRoutes);
 
     app.use(errorHandler);
 
     app.listen(port, () => {
-        
+
     });
